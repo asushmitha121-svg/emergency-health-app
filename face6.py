@@ -28,7 +28,10 @@ except ImportError:
     cv2 = None
 import numpy as np
 import hashlib
-from deepface import DeepFace
+try:
+    from deepface import DeepFace
+except ImportError:
+    DeepFace = None
 
 def connect_db():
     return psycopg2.connect(os.environ["DATABASE_URL"])
