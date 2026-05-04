@@ -1,0 +1,7 @@
+streamlit
+psycopg2-binary
+cryptography
+opencv-python-headless
+face-recognition
+pandas
+numpy
