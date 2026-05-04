@@ -22,7 +22,10 @@ import psycopg2
 from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 import uuid, json, base64, os, getpass
 from datetime import datetime
-import cv2
+try:
+    import cv2
+except ImportError:
+    cv2 = None
 import numpy as np
 import hashlib
 from deepface import DeepFace
