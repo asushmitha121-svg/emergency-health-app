@@ -3,3 +3,4 @@ psycopg2-binary
 cryptography
 pandas
 numpy
+opencv-python-headless==4.8.1.78
