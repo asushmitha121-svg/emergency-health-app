@@ -22,35 +22,13 @@ import psycopg2
 from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 import uuid, json, base64, os, getpass
 from datetime import datetime
-
 import cv2
 import numpy as np
 import hashlib
 from deepface import DeepFace
 
-import uuid
-import json
-import base64
-import os
-import getpass
-from datetime import datetime
-
-
-DB_NAME = "emergency_medical_db"
-DB_USER = "postgres"
-DB_PASSWORD = "1234"
-DB_HOST = "localhost"
-DB_PORT = "5432"
-
 def connect_db():
-    return psycopg2.connect(
-        dbname=DB_NAME,
-        user=DB_USER,
-        password=DB_PASSWORD,
-        host=DB_HOST,
-        port=DB_PORT
-    )
-
+    return psycopg2.connect(os.environ["DATABASE_URL"])
 
 def create_table():
     conn = connect_db()
